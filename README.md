@@ -1,4 +1,4 @@
-# 🎂 Jesulin Raj S – Pastel Birthday Celebration Website
+#Birthday Celebration Website
 
 A personalized digital birthday gift website created with love, appreciation, and God's blessings for **Jesulin Raj S**.
 
