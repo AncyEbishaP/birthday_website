@@ -1,0 +1,354 @@
+/* Pastel Celebration Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --pastel-blue: #DCECFE;
+  --pastel-blue-light: #F2F7FF;
+  --pastel-blue-dark: #6392D0;
+  --pastel-lavender: #EFE8FA;
+  --pastel-lavender-light: #F9F6FE;
+  --pastel-lavender-dark: #9875C8;
+  --pastel-cream: #FAF6F0;
+  --pastel-ivory: #FFFDF9;
+  --pastel-peach: #FFEAE0;
+  --pastel-peach-light: #FFF6F2;
+  --pastel-peach-dark: #E28F6B;
+  --pastel-yellow: #FEF8D8;
+  --pastel-pink: #FCE8F0;
+  --pastel-gold: #D4AF37;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #383140;
+  background-color: #FAF7F2;
+}
+
+/* Custom font utilities */
+.font-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+/* Background Gradients */
+.bg-pastel-mesh {
+  background-color: #FAF7F2;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(220, 236, 254, 0.7) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, rgba(239, 232, 250, 0.7) 0px, transparent 50%),
+    radial-gradient(at 20% 80%, rgba(255, 234, 224, 0.6) 0px, transparent 50%),
+    radial-gradient(at 80% 85%, rgba(254, 248, 216, 0.6) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(255, 253, 249, 0.8) 0px, transparent 50%);
+}
+
+.bg-verse-mesh {
+  background-color: #FBF8F3;
+  background-image: 
+    radial-gradient(at 50% 20%, rgba(254, 248, 216, 0.5) 0px, transparent 60%),
+    radial-gradient(at 20% 90%, rgba(239, 232, 250, 0.4) 0px, transparent 60%),
+    radial-gradient(at 80% 90%, rgba(220, 236, 254, 0.4) 0px, transparent 60%);
+}
+
+/* Subtle Animated Floating Elements */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(14px) rotate(-2deg);
+  }
+}
+
+@keyframes balloonSway {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-22px) rotate(3deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(191, 219, 254, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(191, 219, 254, 0);
+  }
+}
+
+@keyframes candleFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.08, 0.92) rotate(2deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-2deg);
+    opacity: 0.88;
+  }
+  75% {
+    transform: scale(1.04, 0.96) rotate(1deg);
+    opacity: 0.98;
+  }
+}
+
+@keyframes smokeDrift {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-35px) scale(1.8) rotate(15deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.animate-balloon {
+  animation: balloonSway 5.5s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: softPulse 2.8s infinite;
+}
+
+.flame-flicker {
+  animation: candleFlicker 1.5s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+.flame-blown-out {
+  display: none !important;
+}
+
+.smoke-puff {
+  animation: smokeDrift 1.2s forwards ease-out;
+}
+
+/* Glassmorphism & Pastel Cards */
+.pastel-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(160, 175, 200, 0.18), 0 4px 6px -2px rgba(160, 175, 200, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pastel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px -10px rgba(140, 160, 195, 0.28), 0 6px 12px -3px rgba(140, 160, 195, 0.08);
+}
+
+/* Parchment / Letter Styling */
+.parchment-letter {
+  background: #FFFDF9;
+  background-image: 
+    repeating-linear-gradient(rgba(0, 0, 0, 0.015) 0px, rgba(0, 0, 0, 0.015) 1px, transparent 1px, transparent 28px);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    0 10px 25px -5px rgba(180, 160, 140, 0.15),
+    0 20px 45px -10px rgba(180, 160, 140, 0.12);
+  border: 1px solid #F1E9DE;
+  position: relative;
+}
+
+.parchment-letter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 36px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(220, 120, 120, 0.15);
+}
+
+/* Wax Seal */
+.wax-seal {
+  width: 48px;
+  height: 48px;
+  background: radial-gradient(circle at 35% 35%, #F472B6, #DB2777);
+  box-shadow: 0 4px 10px rgba(219, 39, 119, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Polaroid Card Styles */
+.polaroid {
+  background: #FFFFFF;
+  padding: 12px 12px 28px 12px;
+  box-shadow: 0 12px 28px -6px rgba(100, 110, 130, 0.18), 0 4px 10px -2px rgba(100, 110, 130, 0.08);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  position: relative;
+}
+
+.polaroid:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 20px 40px -8px rgba(90, 105, 135, 0.28);
+  z-index: 10;
+}
+
+.polaroid-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 24px;
+  background: rgba(254, 240, 138, 0.65);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(2px);
+  clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
+}
+
+/* Cinema Badge Style */
+.cinema-ticket {
+  background: linear-gradient(135deg, #FFF9ED 0%, #FFF3DB 100%);
+  border: 1px dashed #E5C07B;
+  position: relative;
+}
+
+.cinema-ticket::before, .cinema-ticket::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #FAF7F2;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.cinema-ticket::before {
+  left: -8px;
+}
+
+.cinema-ticket::after {
+  right: -8px;
+}
+
+/* Golden Verse Border */
+.verse-ornament-border {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  position: relative;
+}
+
+.verse-ornament-border::before,
+.verse-ornament-border::after {
+  content: '✦';
+  position: absolute;
+  color: #D4AF37;
+  font-size: 14px;
+}
+
+.verse-ornament-border::before {
+  top: -9px;
+  left: -6px;
+}
+
+.verse-ornament-border::after {
+  bottom: -9px;
+  right: -6px;
+}
+
+/* Scroll reveal classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Audio Visualizer Bars */
+.audio-bar {
+  width: 3px;
+  background-color: #8B5CF6;
+  border-radius: 2px;
+  animation: audioWave 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes audioWave {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 16px;
+  }
+}
+
+.audio-bar:nth-child(2) { animation-delay: 0.2s; }
+.audio-bar:nth-child(3) { animation-delay: 0.4s; }
+.audio-bar:nth-child(4) { animation-delay: 0.1s; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8CEE5;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C4B5D6;
+}

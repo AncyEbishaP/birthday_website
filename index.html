@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Jesulin Raj S! 🎂 | A Pastel Birthday Celebration</title>
+  <meta name="description" content="A personalized digital birthday gift celebrating Jesulin Raj S with love, friendship, appreciation, and God's promises." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pastel: {
+              blue: '#DCECFE',
+              'blue-light': '#F2F7FF',
+              'blue-dark': '#6392D0',
+              lavender: '#EFE8FA',
+              'lavender-light': '#F9F6FE',
+              'lavender-dark': '#9875C8',
+              cream: '#FAF6F0',
+              ivory: '#FFFDF9',
+              peach: '#FFEAE0',
+              'peach-light': '#FFF6F2',
+              'peach-dark': '#E28F6B',
+              yellow: '#FEF8D8',
+              'yellow-dark': '#D6BF4B',
+              pink: '#FCE8F0',
+              gold: '#D4AF37'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-pastel-mesh text-gray-800 antialiased overflow-x-hidden selection:bg-purple-200 selection:text-purple-900">
+
+  <!-- ==========================================
+       FLOATING TOP CONTROLS & AUDIO BAR
+  =========================================== -->
+  <header class="fixed top-4 right-4 sm:right-8 z-50 flex items-center gap-3">
+    <!-- Music Player Toggle -->
+    <button id="music-toggle-btn" 
+            class="pastel-card px-4 py-2 rounded-full flex items-center gap-2.5 text-xs sm:text-sm font-medium text-gray-700 hover:text-indigo-700 transition shadow-md hover:scale-105 active:scale-95 cursor-pointer"
+            title="Toggle peaceful acoustic melody">
+      <div class="flex items-center gap-0.5 h-4">
+        <span class="audio-bar"></span>
+        <span class="audio-bar"></span>
+        <span class="audio-bar"></span>
+        <span class="audio-bar"></span>
+      </div>
+      <span id="music-label" class="font-medium tracking-wide">Play Melody</span>
+    </button>
+
+    <!-- Quick Personalize / Edit Button-->
+    <button onclick="openEditModal()" 
+            class="pastel-card p-2 sm:px-3 sm:py-2 rounded-full flex items-center gap-1.5 text-xs sm:text-sm font-medium text-gray-600 hover:text-purple-700 transition shadow-md hover:scale-105 active:scale-95 cursor-pointer"
+            title="Customize text or message">
+      <i data-lucide="edit-3" class="w-4 h-4 text-purple-500"></i>
+      <!--span class="hidden sm:inline">Customize</span>-->
+    </button>
+  </header>
+
+  <!-- Floating Section Dots (Desktop) -->
+  <nav class="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-3">
+    <a href="#welcome" class="w-3 h-3 rounded-full bg-sky-300 hover:bg-sky-500 hover:scale-125 transition-all shadow-sm" title="Welcome"></a>
+    <a href="#about" class="w-3 h-3 rounded-full bg-purple-300 hover:bg-purple-500 hover:scale-125 transition-all shadow-sm" title="About Jesulin"></a>
+    <a href="#promises" class="w-3 h-3 rounded-full bg-amber-300 hover:bg-amber-500 hover:scale-125 transition-all shadow-sm" title="God's Promise"></a>
+    <a href="#letter" class="w-3 h-3 rounded-full bg-rose-300 hover:bg-rose-500 hover:scale-125 transition-all shadow-sm" title="Personal Letter"></a>
+    <a href="#celebration" class="w-3 h-3 rounded-full bg-yellow-300 hover:bg-yellow-500 hover:scale-125 transition-all shadow-sm" title="Make a Wish"></a>
+    <a href="#ending" class="w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-500 hover:scale-125 transition-all shadow-sm" title="Sweet Ending"></a>
+  </nav>
+
+  <!-- ==========================================
+       1. WELCOME SECTION – A BIRTHDAY SURPRISE
+  =========================================== -->
+  <section id="welcome" class="min-h-screen relative flex flex-col items-center justify-center text-center px-4 pt-16 pb-12 overflow-hidden">
+    <!-- Floating Pastel Balloons -->
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+      <!-- Balloon 1: Pastel Blue -->
+      <div class="absolute -top-12 left-[10%] animate-balloon opacity-75 hidden sm:block" style="animation-delay: 0s;">
+        <svg width="60" height="90" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#BFDBFE" />
+          <path d="M28 67L32 67L30 72Z" fill="#93C5FD" />
+          <path d="M30 72Q28 80 32 88" stroke="#93C5FD" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="24" rx="4" ry="8" fill="#FFFFFF" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <!-- Balloon 2: Soft Lavender -->
+      <div class="absolute top-[18%] right-[12%] animate-balloon opacity-80" style="animation-delay: 1.5s;">
+        <svg width="65" height="95" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#DDD6FE" />
+          <path d="M28 67L32 67L30 72Z" fill="#C4B5FD" />
+          <path d="M30 72Q33 80 29 88" stroke="#C4B5FD" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="24" rx="4" ry="8" fill="#FFFFFF" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <!-- Balloon 3: Light Peach -->
+      <div class="absolute bottom-[20%] left-[8%] animate-balloon opacity-70 hidden md:block" style="animation-delay: 2.8s;">
+        <svg width="55" height="85" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#FED7AA" />
+          <path d="M28 67L32 67L30 72Z" fill="#FDBA74" />
+          <path d="M30 72Q28 78 31 86" stroke="#FDBA74" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="24" rx="4" ry="8" fill="#FFFFFF" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <!-- Balloon 4: Pastel Yellow -->
+      <div class="absolute bottom-[25%] right-[9%] animate-balloon opacity-75 hidden sm:block" style="animation-delay: 0.8s;">
+        <svg width="58" height="88" viewBox="0 0 60 90" fill="none">
+          <ellipse cx="30" cy="35" rx="25" ry="32" fill="#FEF08A" />
+          <path d="M28 67L32 67L30 72Z" fill="#FDE047" />
+          <path d="M30 72Q32 80 28 88" stroke="#FDE047" stroke-width="1.5" fill="none"/>
+          <ellipse cx="22" cy="24" rx="4" ry="8" fill="#FFFFFF" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <!-- Floating Twinkling Stars -->
+      <div class="absolute top-[12%] left-[28%] animate-twinkle text-amber-300 text-lg">✦</div>
+      <div class="absolute top-[22%] right-[30%] animate-twinkle text-purple-300 text-2xl" style="animation-delay: 1.2s;">✦</div>
+      <div class="absolute bottom-[35%] left-[22%] animate-twinkle text-sky-300 text-xl" style="animation-delay: 2s;">✦</div>
+      <div class="absolute bottom-[18%] right-[24%] animate-twinkle text-rose-300 text-sm" style="animation-delay: 0.7s;">✦</div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="max-w-3xl mx-auto z-10 flex flex-col items-center">
+      <!-- Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-purple-100 shadow-sm text-xs font-semibold uppercase tracking-wider text-purple-700 mb-6 backdrop-blur-sm">
+        <span class="text-amber-400">✨</span> A Special Birthday Celebration <span class="text-amber-400">✨</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-5">
+        Happy Birthday, <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-indigo-600 to-purple-600" data-bind="fullName">
+          Jesulin Raj S!
+        </span>
+      </h1>
+
+      <!-- Subtitles -->
+      <p class="text-lg sm:text-2xl text-gray-700 font-medium mb-2" data-bind="subtitle">
+        A special day for someone wonderfully unique.
+      </p>
+      <p class="text-sm sm:text-base text-gray-500 mb-8 max-w-lg italic font-normal" data-bind="heroQuote">
+        "Today is all about celebrating you."
+      </p>
+
+      <!-- Animated Birthday Cake Centerpiece -->
+      <div class="relative my-4 flex flex-col items-center group cursor-pointer" onclick="triggerPastelConfetti()">
+        <!-- Cake SVG Illustration with Flickering Candles -->
+        <div class="relative w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
+          <!-- Ambient Glow behind Cake -->
+          <div class="absolute w-44 h-44 bg-gradient-to-tr from-amber-200/50 via-purple-200/40 to-sky-200/50 rounded-full blur-2xl -z-10 animate-pulse-glow"></div>
+          
+          <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Plate / Stand -->
+            <ellipse cx="100" cy="175" rx="72" ry="12" fill="#E2E8F0" />
+            <ellipse cx="100" cy="173" rx="66" ry="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5" />
+
+            <!-- Tier 1 (Bottom Cake) - Pastel Baby Blue -->
+            <rect x="45" y="118" width="110" height="46" rx="8" fill="#DCECFE" />
+            <!-- Frosting drips on Tier 1 -->
+            <path d="M45 124 Q52 136 60 124 Q68 138 76 124 Q84 135 92 124 Q100 137 108 124 Q116 136 124 124 Q132 138 140 124 Q148 135 155 124 L155 118 L45 118 Z" fill="#F0F7FF" />
+            <!-- Decorative pastel dots -->
+            <circle cx="62" cy="148" r="3.5" fill="#DDD6FE" />
+            <circle cx="82" cy="151" r="3" fill="#FED7AA" />
+            <circle cx="102" cy="148" r="3.5" fill="#FEF08A" />
+            <circle cx="122" cy="151" r="3" fill="#FBCFE8" />
+            <circle cx="140" cy="148" r="3.5" fill="#93C5FD" />
+
+            <!-- Tier 2 (Top Cake) - Soft Lavender -->
+            <rect x="62" y="80" width="76" height="40" rx="6" fill="#EDE9FE" />
+            <!-- Frosting drips on Tier 2 -->
+            <path d="M62 86 Q69 96 77 86 Q85 97 93 86 Q101 96 109 86 Q117 97 125 86 Q132 95 138 86 L138 80 L62 80 Z" fill="#FAF5FF" />
+            <!-- Decorative flowers/cherries -->
+            <circle cx="78" cy="106" r="3" fill="#F472B6" />
+            <circle cx="100" cy="108" r="3.5" fill="#FBBF24" />
+            <circle cx="122" cy="106" r="3" fill="#60A5FA" />
+
+            <!-- Candle 1 (Left) -->
+            <g class="cake-candle" data-candle="1">
+              <rect x="74" y="58" width="6" height="22" rx="2" fill="#FDE047" />
+              <!-- Wick -->
+              <line x1="77" y1="58" x2="77" y2="52" stroke="#475569" stroke-width="1.5" stroke-linecap="round" />
+              <!-- Flame -->
+              <g class="candle-flame">
+                <path d="M77 39 C74 44 73 48 77 52 C81 48 80 44 77 39 Z" fill="#F59E0B" class="flame-flicker" />
+                <path d="M77 43 C75.5 46 75 49 77 51 C79 49 78.5 46 77 43 Z" fill="#FEF08A" />
+              </g>
+            </g>
+
+            <!-- Candle 2 (Center) -->
+            <g class="cake-candle" data-candle="2">
+              <rect x="97" y="52" width="6" height="28" rx="2" fill="#93C5FD" />
+              <!-- Wick -->
+              <line x1="100" y1="52" x2="100" y2="46" stroke="#475569" stroke-width="1.5" stroke-linecap="round" />
+              <!-- Flame -->
+              <g class="candle-flame">
+                <path d="M100 33 C97 38 96 42 100 46 C104 42 103 38 100 33 Z" fill="#F59E0B" class="flame-flicker" />
+                <path d="M100 37 C98.5 40 98 43 100 45 C102 43 101.5 40 100 37 Z" fill="#FEF08A" />
+              </g>
+            </g>
+
+            <!-- Candle 3 (Right) -->
+            <g class="cake-candle" data-candle="3">
+              <rect x="120" y="58" width="6" height="22" rx="2" fill="#F472B6" />
+              <!-- Wick -->
+              <line x1="123" y1="58" x2="123" y2="52" stroke="#475569" stroke-width="1.5" stroke-linecap="round" />
+              <!-- Flame -->
+              <g class="candle-flame">
+                <path d="M123 39 C120 44 119 48 123 52 C127 48 126 44 123 39 Z" fill="#F59E0B" class="flame-flicker" />
+                <path d="M123 43 C121.5 46 121 49 123 51 C125 49 124.5 46 123 43 Z" fill="#FEF08A" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Interactive Hint -->
+        <span class="text-xs text-indigo-600 bg-white/70 backdrop-blur-sm px-3 py-1 rounded-full border border-indigo-100 shadow-sm mt-1 group-hover:scale-105 transition">
+          ✨ Click candles to blow them out or click cake for confetti!
+        </span>
+      </div>
+
+      <!-- Action Button -->
+      <div class="mt-8">
+        <a href="#about" 
+           onclick="triggerPastelConfetti()"
+           class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500 text-white font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300">
+          <span>Open Your Birthday Surprise</span>
+          <i data-lucide="sparkles" class="w-5 h-5 text-amber-200"></i>
+        </a>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <div class="mt-12 text-gray-400 flex flex-col items-center gap-1 animate-bounce">
+        <span class="text-xs uppercase tracking-widest font-semibold">Scroll to discover</span>
+        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       2. A LITTLE ABOUT YOU – CELEBRATING HIM
+  =========================================== -->
+  <section id="about" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto relative">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal-on-scroll">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-100/80 text-purple-800 text-xs font-semibold tracking-wider uppercase mb-3">
+        <i data-lucide="heart" class="w-3.5 h-3.5 text-rose-500 fill-rose-500"></i>
+        <span>A Little Appreciation for You</span>
+      </div>
+      <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-gray-900 mb-4" data-bind="aboutHeading">
+        The One and Only Jesulin!
+      </h2>
+      <p class="text-gray-600 max-w-xl mx-auto text-base sm:text-lg">
+        Celebrating the qualities, laughter, passions, and spirit that make you such a blessing to everyone around you.
+      </p>
+    </div>
+
+    <!-- Main Content Layout: Portrait & Appreciation Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Portrait & Cinema Element (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col gap-6 sticky top-24 reveal-on-scroll">
+        <!-- Portrait Frame Card -->
+        <div class="pastel-card rounded-3xl p-6 flex flex-col items-center text-center relative overflow-hidden border border-white">
+          <!-- Background pastel glow -->
+          <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-200/50 rounded-full blur-2xl -z-10"></div>
+          <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-sky-200/50 rounded-full blur-2xl -z-10"></div>
+
+          <!-- Portrait Image Container -->
+          <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden shadow-xl ring-4 ring-white/90 mb-5 group">
+            <img id="main-portrait-img" 
+                 src="assets/jesulin_portrait_art.jpg" 
+                 alt="Jesulin Raj S" 
+                 class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105" />
+            
+            <!-- Sparkles overlay -->
+            <div class="absolute top-2 right-2 text-amber-300 animate-twinkle pointer-events-none">✨</div>
+            <div class="absolute bottom-3 left-3 text-white animate-twinkle pointer-events-none text-xs">✦</div>
+          </div>
+
+          <!-- Dynamic Badge -->
+          <span id="portrait-badge" class="px-3.5 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-semibold mb-4">
+            🎨 Illustrated Tribute Portrait
+          </span>
+
+          <!-- Photo Switcher Buttons -->
+          <div class="flex items-center gap-2 p-1.5 rounded-full bg-gray-100/80 backdrop-blur-sm border border-gray-200/60 text-xs font-medium">
+            <button id="btn-view-art" 
+                    onclick="switchPortrait('art')"
+                    class="px-3 py-1.5 rounded-full bg-indigo-600 text-white shadow-sm transition">
+              🎨 Art
+            </button>
+            <button id="btn-view-photo1" 
+                    onclick="switchPortrait('photo1')"
+                    class="px-3 py-1.5 rounded-full bg-white/80 text-gray-700 hover:text-indigo-600 transition">
+              📸 Real 1
+            </button>
+            <button id="btn-view-photo2" 
+                    onclick="switchPortrait('photo2')"
+                    class="px-3 py-1.5 rounded-full bg-white/80 text-gray-700 hover:text-indigo-600 transition">
+              🕶️ Real 2
+            </button>
+          </div>
+        </div>
+
+        <!-- Cinema / Movie Passion Element -->
+        <div class="cinema-ticket rounded-2xl p-5 shadow-md border border-amber-200/70 reveal-on-scroll">
+          <div class="flex items-center justify-between pb-3 border-b border-dashed border-amber-300">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🎬</span>
+              <span class="font-cinzel text-xs font-bold tracking-widest text-amber-900 uppercase">Jesulin's Premiere Edition</span>
+            </div>
+            <span class="text-xs px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-bold">VIP ADMIT ONE</span>
+          </div>
+          <div class="pt-3 text-left">
+            <p class="font-serif-title font-semibold text-gray-900 text-base mb-1" data-bind="cinemaTagline">
+              Now Showing: Jesulin Raj S - The Blockbuster Edition 🍿🎬
+            </p>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              <strong>Director:</strong> God's Grace &nbsp;|&nbsp; <strong>Genre:</strong> Joy, Faith & Unmatched Cinema Passion
+            </p>
+            <p class="text-xs text-amber-800 mt-2 bg-amber-100/60 px-2.5 py-1.5 rounded-lg inline-block">
+              ⭐ Known for an extraordinary love for cinema, storytelling & entertainment!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: 5 Appreciation Cards (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col gap-4">
+        
+        <!-- Card 1: Cinema & Entertainment (Passion & Interests) 
+        <div class="pastel-card rounded-2xl p-6 bg-gradient-to-r from-sky-50/90 to-indigo-50/70 border-l-4 border-l-sky-400 reveal-on-scroll">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center text-2xl shrink-0 shadow-sm">
+              🎬
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif-title text-xl font-bold text-gray-900">Your Passion for Cinema & Stories</h3>
+                <span class="text-xs font-medium text-sky-700 bg-sky-100/80 px-2.5 py-0.5 rounded-full">Passions</span>
+              </div>
+              <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                Your love for movies and entertainment isn't just about watching a film—you truly appreciate storytelling, unforgettable cinema moments, and the art that brings characters to life. Every movie night with you is a whole experience!
+              </p>
+            </div>
+          </div>
+        </div>
+      -->
+        <!-- Card 2: Kindness -->
+        <div class="pastel-card rounded-2xl p-6 bg-gradient-to-r from-amber-50/90 to-orange-50/70 border-l-4 border-l-amber-400 reveal-on-scroll">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-2xl shrink-0 shadow-sm">
+              💛
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif-title text-xl font-bold text-gray-900">Your Genuine Kindness</h3>
+                <span class="text-xs font-medium text-amber-800 bg-amber-100/80 px-2.5 py-0.5 rounded-full">Heart</span>
+              </div>
+              <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                You possess a rare, unassuming kindness that makes people feel supported and appreciated. Whether through a thoughtful gesture or simply being a steady presence, your goodness leaves a lasting mark on everyone who knows you.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Sense of Humour -->
+        <div class="pastel-card rounded-2xl p-6 bg-gradient-to-r from-yellow-50/90 to-amber-50/70 border-l-4 border-l-yellow-400 reveal-on-scroll">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-yellow-100 flex items-center justify-center text-2xl shrink-0 shadow-sm">
+              😄
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif-title text-xl font-bold text-gray-900">Your Sense of Humour</h3>
+                <span class="text-xs font-medium text-yellow-800 bg-yellow-100/80 px-2.5 py-0.5 rounded-full">Laughter</span>
+              </div>
+              <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                Your natural wit and warm smile can brighten the dullest day. You bring spontaneous joy and easy laughter into conversations, making every moment spent together memorable and uplifting.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Faith in God -->
+        <div class="pastel-card rounded-2xl p-6 bg-gradient-to-r from-purple-50/90 to-indigo-50/70 border-l-4 border-l-purple-400 reveal-on-scroll">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-2xl shrink-0 shadow-sm">
+              🕊️
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif-title text-xl font-bold text-gray-900">Your Faith in God</h3>
+                <span class="text-xs font-medium text-purple-800 bg-purple-100/80 px-2.5 py-0.5 rounded-full">Foundation</span>
+              </div>
+              <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                Your quiet reliance on God and your desire to walk in His ways speak volumes. Having faith at the center of your life gives you a calm confidence, inspiring others to trust God through every season.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Unique Personality -->
+        <div class="pastel-card rounded-2xl p-6 bg-gradient-to-r from-rose-50/90 to-pink-50/70 border-l-4 border-l-rose-400 reveal-on-scroll">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center text-2xl shrink-0 shadow-sm">
+              🌟
+            </div>
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif-title text-xl font-bold text-gray-900">Your Unique Personality</h3>
+                <span class="text-xs font-medium text-rose-800 bg-rose-100/80 px-2.5 py-0.5 rounded-full">Irreplaceable</span>
+              </div>
+              <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                You don't pretend to be anyone else. You are authentically yourself—grounded, thoughtful, loyal, and wonderfully distinct. That genuine authenticity is what makes you such a true and irreplaceable friend.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       3. A PROMISE FROM GOD – BIBLE VERSE
+  =========================================== -->
+  <section id="promises" class="py-24 px-4 sm:px-6 bg-verse-mesh relative overflow-hidden">
+    <!-- Decorative Ambient Glow & Stardust -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-r from-amber-200/30 via-yellow-100/40 to-purple-200/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      
+      <!-- Section Eyebrow -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-amber-200 text-amber-900 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+        <span>🕊️</span>
+        <span>A Blessing for Your New Year</span>
+      </div>
+
+      <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
+        His Promises for You
+      </h2>
+      <p class="text-gray-600 max-w-lg mx-auto text-base sm:text-lg mb-8">
+        God's word is the most enduring birthday gift—anchoring your steps, bringing peace, and guiding your new year.
+      </p>
+
+      <!-- Scripture Tabs -->
+      <div class="inline-flex p-1.5 rounded-full bg-white/80 border border-amber-200/80 shadow-sm mb-8 text-xs sm:text-sm font-semibold">
+        <button id="tab-numbers" 
+                onclick="switchVerseTab('numbers')"
+                class="px-5 py-2 rounded-full bg-amber-100/90 text-amber-950 border border-amber-300 transition-all duration-300">
+          Numbers 6:24–26 (Priestly Blessing)
+        </button>
+        <button id="tab-jeremiah" 
+                onclick="switchVerseTab('jeremiah')"
+                class="px-5 py-2 rounded-full bg-white/60 text-gray-600 border border-transparent hover:text-amber-950 transition-all duration-300">
+          Jeremiah 29:11 (Hope & Future)
+        </button>
+      </div>
+
+      <!-- Sacred Scripture Card Container -->
+      <div class="pastel-card rounded-3xl p-8 sm:p-12 border-2 border-amber-200/80 shadow-2xl relative text-left bg-gradient-to-b from-white/95 via-amber-50/30 to-white/95">
+        
+        <!-- Tab 1: Numbers 6:24-26 (KJV) - PRIMARY -->
+        <div id="content-numbers" class="transition-opacity duration-300">
+          <!-- Cross / Dove Symbol -->
+          <div class="flex items-center justify-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-amber-100/80 text-amber-700 flex items-center justify-center text-xl shadow-inner border border-amber-200">
+              ✝
+            </div>
+          </div>
+
+          <!-- Verse Text -->
+          <div class="verse-ornament-border p-6 sm:p-8 rounded-2xl bg-amber-50/40 my-4 text-center">
+            <p class="font-serif-title text-xl sm:text-2xl md:text-3xl text-gray-800 leading-relaxed italic font-medium">
+              "The <span class="font-semibold text-amber-800">LORD</span> bless thee, and keep thee:<br />
+              The <span class="font-semibold text-amber-800">LORD</span> make his face shine upon thee, and be gracious unto thee:<br />
+              The <span class="font-semibold text-amber-800">LORD</span> lift up his countenance upon thee, and give thee peace."
+            </p>
+            <p class="mt-4 font-cinzel text-xs sm:text-sm tracking-widest text-amber-800 font-bold uppercase">
+              — Numbers 6:24–26 (KJV)
+            </p>
+          </div>
+
+          <!-- Personal Blessing for Jesulin -->
+          <div class="mt-8 pt-6 border-t border-amber-200/60 text-center sm:text-left">
+            <div class="flex items-center gap-2 mb-2 justify-center sm:justify-start">
+              <span class="text-sm">🙏</span>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-amber-800 font-sans">A Personal Birthday Prayer for Jesulin</h4>
+            </div>
+            <p id="numbers-prayer-text" class="text-gray-700 text-base sm:text-lg leading-relaxed font-normal">
+              Jesulin, my prayer for you is that the Lord will bless you and keep you wherever you go. May His presence guide every step you take, His light shine upon your path, and His peace remain with you in every season of life. May this new year of your life be filled with His goodness and countless blessings.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 2: Jeremiah 29:11 (ESV) - COMPANION -->
+        <div id="content-jeremiah" class="hidden transition-opacity duration-300">
+          <!-- Dove Symbol -->
+          <div class="flex items-center justify-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-sky-100/80 text-sky-700 flex items-center justify-center text-xl shadow-inner border border-sky-200">
+              🕊️
+            </div>
+          </div>
+
+          <!-- Verse Text -->
+          <div class="verse-ornament-border p-6 sm:p-8 rounded-2xl bg-sky-50/40 my-4 text-center">
+            <p class="font-serif-title text-xl sm:text-2xl md:text-3xl text-gray-800 leading-relaxed italic font-medium">
+              "For I know the plans I have for you, declares the <span class="font-semibold text-sky-800">LORD</span>, plans for welfare and not for evil, to give you a future and a hope."
+            </p>
+            <p class="mt-4 font-cinzel text-xs sm:text-sm tracking-widest text-sky-800 font-bold uppercase">
+              — Jeremiah 29:11 (ESV)
+            </p>
+          </div>
+
+          <!-- Personal Message -->
+          <div class="mt-8 pt-6 border-t border-sky-200/60 text-center sm:text-left">
+            <div class="flex items-center gap-2 mb-2 justify-center sm:justify-start">
+              <span class="text-sm">✨</span>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-sky-800 font-sans">A Heartfelt Birthday Reflection</h4>
+            </div>
+            <p id="jeremiah-prayer-text" class="text-gray-700 text-base sm:text-lg leading-relaxed font-normal">
+              On your birthday, I pray that you continue to trust in God's plans for your life. Even when the path ahead seems uncertain, remember that He knows you, He goes before you, and His plans are greater than anything you can imagine. May this promise encourage you throughout every season of your life.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Blessing Button -->
+        <div class="mt-8 text-center">
+          <button onclick="triggerPastelConfetti({particleCount: 50, spread: 60}); showToast('🕊️ Amen! May God fulfill every blessing in your life, Jesulin!')" 
+                  class="px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-200 via-yellow-200 to-amber-300 text-amber-950 font-semibold text-sm shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all">
+            Receive Blessing • Amen ✨
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       4. A MESSAGE FROM ME – PERSONAL BIRTHDAY NOTE
+  =========================================== -->
+  <section id="letter" class="py-24 px-4 sm:px-6 max-w-4xl mx-auto relative">
+    <!-- Header -->
+    <div class="text-center mb-14 reveal-on-scroll">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-100 text-rose-800 text-xs font-semibold tracking-wider uppercase mb-3">
+        <i data-lucide="mail" class="w-3.5 h-3.5 text-rose-500"></i>
+        <span>Personal Birthday Note</span>
+      </div>
+      <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-gray-900 mb-3">
+        A Few Words from Me...
+      </h2>
+      <p class="text-gray-600 text-base sm:text-lg">
+        A handwritten letter written to you.
+      </p>
+    </div>
+
+    <!-- Parchment Letter Styling -->
+    <div class="parchment-letter rounded-3xl p-8 sm:p-14 border border-amber-100 shadow-xl reveal-on-scroll relative">
+      
+      <!-- Top Wax Seal & Actions -->
+      <div class="flex items-center justify-between pb-6 mb-6 border-b border-gray-200/50">
+        <!-- Wax Seal -->
+        <div class="flex items-center gap-3">
+          <div class="wax-seal">
+            J
+          </div>
+          <div>
+            <span class="block text-xs uppercase tracking-wider text-gray-400 font-semibold">Special Delivery</span>
+            <span class="font-script text-xl sm:text-2xl text-purple-900 font-bold">To Jesulin Raj S</span>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="flex items-center gap-2">
+          <button onclick="copyLetterToClipboard()" 
+                  class="p-2 sm:px-3 sm:py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 text-xs font-medium flex items-center gap-1.5 transition"
+                  title="Copy letter to clipboard">
+            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline">Copy Note</span>
+          </button>
+          <button onclick="openEditModal()" 
+                  class="p-2 sm:px-3 sm:py-1.5 rounded-lg bg-purple-100 hover:bg-purple-200 text-purple-700 text-xs font-medium flex items-center gap-1.5 transition"
+                  title="Edit this message in place">
+            <i data-lucide="edit" class="w-3.5 h-3.5"></i>
+            <!--<span class="hidden sm:inline">Edit Letter</span>-->
+          </button>
+        </div>
+      </div>
+
+      <!-- Letter Body -->
+      <div class="relative pl-6 sm:pl-10 text-gray-800 text-base sm:text-lg leading-relaxed font-normal">
+        <div class="font-script text-3xl text-purple-800 font-bold mb-4">
+          Dearest Jes,
+        </div>
+        
+        <!-- Bound Letter Content (Editable) -->
+        <div id="letter-content" class="space-y-4">
+          <!-- Populated by applyConfigToDOM() -->
+        </div>
+
+        <!-- Letter Sign-off -->
+        <div class="mt-8 pt-4">
+          <p class="font-script text-2xl sm:text-3xl text-purple-900 font-bold mb-1">
+            Always your friend,
+          </p>
+          <p class="text-sm text-gray-500 font-sans tracking-wide">
+            With warmest wishes, genuine prayers & big smiles 🤍
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       5. BIRTHDAY CELEBRATION SECTION
+  =========================================== -->
+  <section id="celebration" class="py-24 px-4 sm:px-6 bg-gradient-to-b from-transparent via-purple-50/50 to-transparent relative">
+    <div class="max-w-4xl mx-auto text-center reveal-on-scroll">
+      
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold tracking-wider uppercase mb-3">
+        <span>🎉</span>
+        <span>Time to Celebrate</span>
+      </div>
+
+      <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
+        Here's to Another Beautiful Year!
+      </h2>
+
+      <!-- Wish Banner -->
+      <div class="pastel-card max-w-2xl mx-auto rounded-2xl p-6 mb-8 border border-yellow-200/70 bg-gradient-to-r from-amber-50/80 via-white to-purple-50/80 shadow-md">
+        <p class="text-lg sm:text-xl text-gray-800 font-medium italic">
+          "May this year be filled with answered prayers, new beginnings, laughter, and countless blessings."
+        </p>
+      </div>
+
+      <!-- Interactive Blow Candles Button & Relight Options -->
+      <div class="flex items-center justify-center gap-3 mb-10">
+        <button onclick="blowAllCandles()" 
+                class="px-5 py-2.5 rounded-full bg-white border border-gray-200 shadow-sm hover:shadow hover:bg-gray-50 text-gray-700 text-xs sm:text-sm font-semibold flex items-center gap-2 transition active:scale-95">
+          <span>💨</span> Blow All Candles
+        </button>
+        <button onclick="relightCandles()" 
+                class="px-5 py-2.5 rounded-full bg-white border border-gray-200 shadow-sm hover:shadow hover:bg-gray-50 text-gray-700 text-xs sm:text-sm font-semibold flex items-center gap-2 transition active:scale-95">
+          <span>🕯️</span> Relight Candles
+        </button>
+      </div>
+
+      <!-- Secret Wish Banner (Revealed when all candles blown) -->
+      <div id="cake-wish-banner" class="hidden max-w-md mx-auto mb-8 p-4 rounded-2xl bg-amber-100 text-amber-900 font-medium text-sm animate-bounce shadow-md">
+        ✨ All candles blown out! God hears your quietest prayers, Jesulin! May all your heartfelt wishes come true! ✨
+      </div>
+
+      <!-- Big Animated "Make a Wish!" Button -->
+      <div class="relative inline-block">
+        <button onclick="handleMakeWish()" 
+                class="px-10 py-5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-white font-bold text-xl sm:text-2xl shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3 mx-auto animate-pulse-glow">
+          <i data-lucide="sparkles" class="w-6 h-6 text-amber-200"></i>
+          <span>Make a Wish!</span>
+          <i data-lucide="sparkles" class="w-6 h-6 text-amber-200"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       6. FINAL SECTION – A SWEET ENDING
+  =========================================== -->
+  <section id="ending" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto text-center relative overflow-hidden">
+    
+    <!-- Quotes & Final Message -->
+    <div class="max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <h2 class="font-serif-title text-4xl sm:text-6xl font-bold text-gray-900 mb-4" data-bind="fullName">
+        Once Again, Happy Birthday, Jesulin Raj S!
+      </h2>
+
+      <p class="text-xl sm:text-2xl text-purple-900 font-serif italic mb-6">
+        "Keep shining, keep smiling, and keep walking in His light."
+      </p>
+
+      <div class="pastel-card p-8 rounded-3xl border border-purple-100 shadow-lg bg-white/90">
+        <p class="text-lg sm:text-xl text-gray-700 leading-relaxed font-medium">
+          "May your life be a beautiful story written by God, filled with unexpected blessings, wonderful moments, and a peace that never fades."
+        </p>
+      </div>
+    </div>
+
+    <!-- Polaroid Memories Strip (Featuring His Photos) -->
+    <div class="mb-20 reveal-on-scroll">
+      <div class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-6">
+        Moments & Memories of Jesulin
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+        
+        <!-- Polaroid 1: Illustrated Portrait -->
+        <div class="polaroid rounded-lg -rotate-3 cursor-pointer" onclick="triggerPastelConfetti()">
+          <div class="polaroid-tape"></div>
+          <div class="w-56 h-64 overflow-hidden rounded bg-gray-100">
+            <img src="assets/jesulin_portrait_art.jpg" alt="Jesulin Art" class="w-full h-full object-cover" />
+          </div>
+          <p class="font-script text-xl text-gray-700 font-bold text-center mt-3">
+            The Legend Himself 🌟
+          </p>
+        </div>
+
+        <!-- Polaroid 2: Real Photo 1 (Smiling in Nature) -->
+        <div class="polaroid rounded-lg rotate-2 cursor-pointer" onclick="triggerPastelConfetti()">
+          <div class="polaroid-tape"></div>
+          <div class="w-56 h-64 overflow-hidden rounded bg-gray-100">
+            <img src="assets/jesulin_photo_1.jpg" alt="Jesulin Smiling" class="w-full h-full object-cover" />
+          </div>
+          <p class="font-script text-xl text-gray-700 font-bold text-center mt-3">
+            Warm Smiles & Great Vibes 🍃
+          </p>
+        </div>
+
+        <!-- Polaroid 3: Real Photo 2 (Suit & Balcony) -->
+        <div class="polaroid rounded-lg -rotate-2 cursor-pointer" onclick="triggerPastelConfetti()">
+          <div class="polaroid-tape"></div>
+          <div class="w-56 h-64 overflow-hidden rounded bg-gray-100">
+            <img src="assets/jesulin_photo_2.jpg" alt="Jesulin Blazer" class="w-full h-full object-cover" />
+          </div>
+          <p class="font-script text-xl text-gray-700 font-bold text-center mt-3">
+            Sharp, Stylish & Cinematic 🎬
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Back to Top & Replay -->
+    <div class="flex flex-col items-center gap-4">
+      <a href="#welcome" 
+         onclick="triggerPastelConfetti()"
+         class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-gray-200 text-gray-700 text-sm font-semibold shadow-sm hover:shadow-md hover:bg-gray-50 transition active:scale-95">
+        <i data-lucide="arrow-up" class="w-4 h-4 text-purple-600"></i>
+        <span>Back to Top 🎈</span>
+      </a>
+      <p class="text-xs text-gray-400">
+        Crafted with warmth, prayers & friendship for Jesulin Raj S • 2026
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================
+       MODAL: MAKE A WISH
+  =========================================== -->
+  <div id="wish-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="pastel-card bg-white max-w-md w-full rounded-3xl p-8 text-center shadow-2xl border border-purple-100 animate-scale-up">
+      <div class="w-16 h-16 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-3xl mx-auto mb-4">
+        🎂
+      </div>
+      <h3 class="font-serif-title text-2xl font-bold text-gray-900 mb-2">
+        Wish Sent to Heaven! ✨
+      </h3>
+      <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+        May the Lord grant you the desires of your heart and make all your plans succeed.
+      </p>
+      
+      <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 font-medium mb-6">
+        "Delight yourself in the LORD, and He will give you the desires of your heart." — <strong>Psalm 37:4</strong>
+      </div>
+
+      <p id="wish-counter-display" class="text-xs text-gray-400 mb-6 font-semibold uppercase tracking-wider">
+        Wishes made today: 1
+      </p>
+
+      <button onclick="closeWishModal(); triggerPastelConfetti();" 
+              class="w-full py-3 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold text-sm shadow-md hover:shadow-lg transition">
+        Celebrate & Enjoy! 🎉
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL: CUSTOMIZE / EDIT DETAILS
+  =========================================== -->
+  <div id="edit-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="pastel-card bg-white max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl border border-gray-100 max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-gray-200 mb-5">
+        <div class="flex items-center gap-2">
+          <i data-lucide="edit-3" class="w-5 h-5 text-purple-600"></i>
+          <h3 class="font-serif-title text-xl font-bold text-gray-900">Personalize Birthday Details</h3>
+        </div>
+        <button onclick="closeEditModal()" class="text-gray-400 hover:text-gray-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-gray-500 mb-5">
+        Easily edit the recipient's name, letter, or prayer. Your changes will be saved in your browser!
+      </p>
+
+      <div class="space-y-4 text-left">
+        <!-- Full Name -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Full Name</label>
+          <input type="text" id="input-full-name" class="w-full px-3.5 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-400 text-sm" />
+        </div>
+
+        <!-- Short / Nick Name -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">First / Short Name</label>
+          <input type="text" id="input-short-name" class="w-full px-3.5 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-400 text-sm" />
+        </div>
+
+        <!-- Hero Subtitle -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Hero Subtitle</label>
+          <input type="text" id="input-subtitle" class="w-full px-3.5 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-400 text-sm" />
+        </div>
+
+        <!-- Birthday Letter -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Personal Letter Content</label>
+          <textarea id="input-letter" rows="6" class="w-full px-3.5 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-400 text-sm font-sans"></textarea>
+        </div>
+
+        <!-- Personal Prayer -->
+        <div>
+          <label class="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Personal Prayer for Him</label>
+          <textarea id="input-blessing" rows="3" class="w-full px-3.5 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-400 text-sm"></textarea>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="flex items-center justify-between pt-6 border-t border-gray-200 mt-6">
+        <button onclick="resetConfig(); closeEditModal();" class="text-xs text-rose-500 hover:underline">
+          Reset to Defaults
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="closeEditModal()" class="px-4 py-2 rounded-full border border-gray-200 text-gray-600 text-xs font-medium hover:bg-gray-50">
+            Cancel
+          </button>
+          <button onclick="saveCustomizations()" class="px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold shadow-md">
+            Save Changes
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

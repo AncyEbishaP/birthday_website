@@ -1,0 +1,18 @@
+{
+  "name": "jesulin-pastel-birthday-celebration",
+  "version": "1.0.0",
+  "description": "Personalized pastel digital birthday celebration website for Jesulin Raj S",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "birthday",
+    "pastel",
+    "celebration",
+    "personalized-gift"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}
